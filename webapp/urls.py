@@ -12,3 +12,10 @@ urlpatterns = [
     path('', RedirectView.as_view(url=reverse_lazy('cuentas:login'), permanent=False)),
 
 ]
+
+
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('cuentas/', include(('cuentas.urls', 'cuentas'), namespace='cuentas')),  # ← clave
+]
